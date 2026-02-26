@@ -100,3 +100,6 @@ Contributions are welcome! If you have suggestions for new features or improveme
 
 
 *“Feed Your Intellect. Awaken Your True Self.”*
+
+
+-FRONT END ELEMENTS WERE CREATED WITH AI BUT THATS ALL...
