@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | The Philosophical Shelf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">The Bookish Shelf</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html" class="auth-btn">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="auth-container">
+            <h2>Welcome Back</h2>
+            <form class="auth-form" id="login-form">
+                <input type="email" placeholder="Email Address" id="email" required>
+                <input type="password" placeholder="Password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="auth-link">
+                Don't have an account? <a href="register.html">Register here</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Mindful Shelf. Seek Truth.</p>
+        <div style="margin-top: 1rem;">
+            <a href="seller-registration.html" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">Become a Seller</a>
+        </div>
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>

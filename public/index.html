@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Philosophical Shelf | Philosophy & Spirit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">The Bookish Shelf</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Merch</a></li>
+                <li><a href="login.html" class="auth-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Feed Your Intellect. Awaken Your True Self.</h1>
+            <p>Curated books and tools for the inner journey.</p>
+        </section>
+
+        <section class="store-section">
+            <h2>Featured Items</h2>
+            <div class="product-grid">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color: var(--white);">The Bookish Shelf</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#">Books</a>
+                <a href="#">Merch</a>
+                <a href="seller-registration.html" class="seller-link">Become a Seller</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Mindful Shelf. Seek Truth. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+
+    <div id="floating-cart-root"></div>
+    <script>
+    // Load the cart component
+    fetch('cart-component.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('floating-cart-root').innerHTML = html);
+</script>
+<script src="cart-component.js"></script>
+</body>
+</html>

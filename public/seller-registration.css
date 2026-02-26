@@ -1,0 +1,128 @@
+/* Seller Registration Specific Styles */
+.seller-registration-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.seller-hero {
+    background: linear-gradient(rgba(45, 52, 54, 0.8), rgba(45, 52, 54, 0.8)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000') center/cover;
+    color: var(--white);
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: -4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.seller-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.seller-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.seller-form-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 3rem;
+    position: relative;
+    z-index: 10;
+    margin-top: 2rem;
+}
+
+.seller-form-card h2 {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #636e72;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.submit-btn {
+    width: 100%;
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: #5649c0;
+    transform: translateY(-2px);
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.terms-checkbox input {
+    margin-top: 0.3rem;
+}
+
+.terms-checkbox label {
+    font-size: 0.85rem;
+    color: #636e72;
+    line-height: 1.4;
+}

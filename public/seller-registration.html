@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Seller | The Philosophical Shelf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="seller-registration.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">The Bookish Shelf</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html" class="auth-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="seller-registration-container">
+        <section class="seller-hero">
+            <h1>Empower Your Craft</h1>
+            <p>Join our community of mindful sellers and reach an audience that values depth and quality.</p>
+        </section>
+
+        <section class="seller-form-card">
+            <h2>Seller Registration</h2>
+            <form class="seller-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" placeholder="Doe" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="shop-name">Shop Name</label>
+                        <input type="text" id="shop-name" placeholder="The Ancient Wisdom Store" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Business Email</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+1 (555) 000-0000" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="category">Primary Category</label>
+                        <select id="category" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="books">Books & Manuscripts</option>
+                            <option value="merch">Spiritual Merch</option>
+                            <option value="art">Philosophical Art</option>
+                            <option value="tools">Meditation Tools</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="description">Tell us about your products</label>
+                        <textarea id="description" placeholder="Briefly describe what you plan to sell..." rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the Seller Terms of Service and Privacy Policy. I understand that my application will be reviewed by the administration team.</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Apply to Sell</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color: var(--white);">The Bookish Shelf</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#">Books</a>
+                <a href="#">Merch</a>
+                <a href="seller-registration.html" class="seller-link">Become a Seller</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Mindful Shelf. Seek Truth. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="floating-cart-root"></div>
+    <script>
+        fetch('cart-component.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('floating-cart-root').innerHTML = html);
+    </script>
+    <script src="cart-component.js"></script>
+</body>
+</html>
