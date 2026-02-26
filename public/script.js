@@ -1,9 +1,8 @@
-// const cartCount = document.getElementById('cart-count');
+const authNav=document.querySelector("#auth-nav")
 const item_list=document.querySelector("#item-list")
 const product_area=document.querySelector(".product-grid")
 
 let basket=JSON.parse(localStorage.getItem("basket"))||[];
-const token=localStorage.getItem("token")
 
 render();
 
@@ -44,3 +43,22 @@ async function  render(){
     );
     });
 }
+
+//FOR LOGIN LOGOUT NAV STATE IN INDEX.HTML
+function updateNav(){
+    const token=localStorage.getItem("token")
+    const name=localStorage.getItem("name")
+    
+    if(token){
+        authNav.innerHTML=`<span style="color:#636e72">${name}</span><a class="auth-btn" id="log-out">Logout</a>`
+        document.querySelector("#log-out").addEventListener("click",()=>{
+        localStorage.clear()
+        window.location.reload();
+})
+    }
+    else{
+        authNav.innerHTML=`<a href="login.html" class="auth-btn">Login</a>`
+    }
+}
+updateNav()
+

@@ -3,13 +3,16 @@ const total_price=document.querySelector("#total-price")
 const subtotal_price=document.querySelector("#subtotal-price")
 const basket=JSON.parse(localStorage.getItem("basket"))||[]
 const checkout=document.querySelector("#checkout")
-
+const nav_user=document.querySelector("#nav-user")
 
 let total=0
 render();
 
 
 function render(){
+    const user=localStorage.getItem("name")
+    nav_user.innerHTML=`${user}`
+    
     total=0;
     if (basket.length === 0) {
         item_list.innerHTML = `

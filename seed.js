@@ -1,9 +1,12 @@
 //Warning only for development stage
-
+const bcrypt=require("bcrypt")
 const mongoose=require("mongoose")
 const Product=require("./src/models/product")
 const User=require("./src/models/User")
 const Order=require("./src/models/Order")
+
+require("dotenv").config()
+
 
 async function seed(){
     await mongoose.connect(process.env.MongoDB_URL)
@@ -15,7 +18,7 @@ async function seed(){
     await User.insertOne({
         name:"Admin",
         email:"ecomadmin@gmail.com",
-        password:"admin12345",
+        password:await bcrypt.hash("admin123",10)  ,
         role:"admin"
     })
 
