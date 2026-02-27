@@ -33,11 +33,17 @@ async function  render(){
         const item = {
             id: button.dataset.id,
             name: button.dataset.name,
-            price: button.dataset.price
+            price: button.dataset.price,
+            quantity:1
         };
-        basket.push(item);
+        const existing=basket.find(i=>i.id===item.id)
+        if(existing){
+            existing.quantity+=1
+        }
+        else{
+            basket.push(item)
+        }
         localStorage.setItem("basket", JSON.stringify(basket));
-        // cartCount.innerHTML = basket.length;
     }
 
     );

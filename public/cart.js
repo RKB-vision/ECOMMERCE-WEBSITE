@@ -30,15 +30,22 @@ function render(){
 
     let clutter=""
     basket.forEach((element, index) => {
+        // do{
         clutter += `
             <div class="cart-item">
                 <div class="cart-item-info">
                     <span class="cart-item-name">${element.name}</span>
                     <span class="cart-item-price">$${parseFloat(element.price).toFixed(2)}</span>
                 </div>
-                <button class="remove-btn" onclick="removeItem(${index})" style="background: none; border: none; color: #ff7675; cursor: pointer; font-size: 0.9rem;">Remove</button>
+                <div class="quantity-control">
+                    <label for="quantity-${index}">Qty:</label>
+                    <input type="number" value="${element.quantity}" min="1" max="10" id="quantity-${index}" class="qty-input" onchange="updateQuantity('${element.id}',this.value)">
+                </div>
+
+                <button class="remove-btn" onclick="removeItem(${index})" style="background: none; border: none; color: #ff7675; cursor: pointer; font-size: 0.9rem;  font-weight: 500;">Remove</button>
             </div>`;
-        total += parseFloat(element.price)
+            // while(basket.filter(item=>item.id=element.id).length===1)
+        total += parseFloat(element.price)*element.quantity
     });
     item_list.innerHTML = clutter;
     total_price.innerHTML = `$${total.toFixed(2)}`;
@@ -73,7 +80,7 @@ checkout.addEventListener("click",async (click)=>{
         body:JSON.stringify({
             items:basket.map(item=>({
                 product:item.id,
-                quantity:1,
+                quantity:item.quantity,
                price:parseFloat(item.price) 
             })),
             total
@@ -91,3 +98,15 @@ checkout.addEventListener("click",async (click)=>{
         console.log("Error adding order...")
     }
 })
+
+
+//UPDATE PRICE WHEN SOMEONE CHANGES VALUE IN CART
+window.updateQuantity=(id, newQuantity) => {
+    const recorded=basket.find(item=>item.id===id)
+    recorded.quantity=parseInt(newQuantity)
+    localStorage.setItem("basket",JSON.stringify(basket))
+    render()
+}
+
+
+// LEARN ABOUT CART-COMP JS
