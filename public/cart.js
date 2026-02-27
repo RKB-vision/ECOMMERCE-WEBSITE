@@ -89,7 +89,7 @@ checkout.addEventListener("click",async (click)=>{
     if (response.ok){
         data=await response.json()
         console.log(data.message)
-        alert("Order Created")
+        showToast("Order Created successfully ! 🎉")
         localStorage.removeItem("basket")
         basket.length=0
         render();

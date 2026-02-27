@@ -1,0 +1,20 @@
+/* FOR TOAST NOTIFIER */
+#toast {
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    transform: none;
+    background: #2d3436;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#toast.show {
+    opacity: 1;
+}
