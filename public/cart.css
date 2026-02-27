@@ -63,6 +63,44 @@
 .cart-item-price {
     color: var(--accent-color);
     font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.quantity-control label {
+    font-size: 0.85rem;
+    color: #636e72;
+    font-weight: 500;
+}
+
+.qty-input {
+    width: 60px;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    background-color: var(--light-gray);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.qty-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.qty-input::-webkit-inner-spin-button,
+.qty-input::-webkit-outer-spin-button {
+    opacity: 1;
 }
 
 /* Cart Summary */
